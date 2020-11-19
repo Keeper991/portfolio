@@ -1,12 +1,23 @@
-import GlobalStyle from "./Components/GlobalStyles";
-import Header from "./Components/Header";
+import GlobalStyle from "Components/GlobalStyles";
+import Header from "Components/Header";
+import Intro from "Routes/Intro";
+import Profile from "Routes/Profile";
+import styled from "styled-components";
+
+const StyleDiv = styled.div.attrs({ classname: "App" })`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
 
 function App() {
   return (
-    <div className="App">
+    <StyleDiv>
       <GlobalStyle />
       <Header />
-    </div>
+      <Intro />
+      <Profile />
+    </StyleDiv>
   );
 }
 
