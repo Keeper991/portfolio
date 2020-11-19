@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Container = styled.div`
   width: 100vw;
@@ -15,11 +16,20 @@ const Title = styled.div``;
 
 const Desc = styled.div``;
 
-const Section = ({ bg, title, desc }) => (
+const Section = ({ bg, title, children }) => (
   <Container bg={bg}>
     <Title>{title}</Title>
-    <Desc>{desc}</Desc>
+    <Desc>{children}</Desc>
   </Container>
 );
+
+Section.propTypes = {
+  bg: PropTypes.string,
+  title: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
+};
 
 export default Section;
