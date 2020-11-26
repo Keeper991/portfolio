@@ -7,8 +7,8 @@ Portfolio Page made by React.js.
 ### Header
 
 - [x] markup
-- [ ] background color (scroll responsive)
-- [ ] symbol
+- [x] background color & blur (scroll responsive)
+- [x] symbol
 - [ ] page anchoring
 
 ### Intro
