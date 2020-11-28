@@ -9,7 +9,8 @@ Portfolio Page made by React.js.
 - [x] markup
 - [x] background color & blur (scroll responsive)
 - [x] symbol
-- [ ] page anchoring
+- [x] page scrolling event
+- [ ] hash routing
 
 ### Intro
 

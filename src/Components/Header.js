@@ -25,6 +25,7 @@ const Symbol = styled.div`
   width: 3em;
   height: 3em;
   margin-right: 2em;
+  cursor: pointer;
 `;
 
 const List = styled.ul`
@@ -39,9 +40,11 @@ const Item = styled.li`
   }
   padding: 1.5em 0.5em;
   text-shadow: 0.1em 0.1em 0.2em #ffffff;
+  cursor: pointer;
 `;
 
 const Header = () => {
+  // Header background style
   const [isScroll, setIsScroll] = useState(false);
   const handleScroll = () =>
     window.scrollY > 100 ? setIsScroll(true) : setIsScroll(false);
@@ -50,13 +53,22 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Header click event
+  const scrollTo = (sectionName) => {
+    if (typeof sectionName !== "string") return;
+    return () => {
+      const section = document.getElementById(sectionName);
+      section.scrollIntoView({ behavior: "smooth" });
+    };
+  };
+
   return (
     <Container isScroll={isScroll}>
-      <Symbol />
+      <Symbol onClick={scrollTo("#")} />
       <List>
-        <Item>PROFILE</Item>
-        <Item>PROJECTS</Item>
-        <Item>CONTACT</Item>
+        <Item onClick={scrollTo("profile")}>PROFILE</Item>
+        <Item onClick={scrollTo("projects")}>PROJECTS</Item>
+        <Item onClick={scrollTo("contact")}>CONTACT</Item>
       </List>
     </Container>
   );

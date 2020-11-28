@@ -1,5 +1,6 @@
 import Section from "Components/Section";
 import styled from "styled-components";
+import RoutePointer from "Components/RoutePointer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMobileAlt } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
@@ -28,6 +29,7 @@ const IconWrapper = styled.div`
 
 const Contact = () => (
   <>
+    <RoutePointer id="contact" />
     <Section title="Contact">
       <Container>
         <List>

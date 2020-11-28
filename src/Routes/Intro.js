@@ -38,11 +38,13 @@ const Desc = styled.p`
 `;
 
 const Intro = () => (
-  <Container>
+  <>
     <RoutePointer id="#" />
-    <Title>Sehyeon Park</Title>
-    <Desc>Make a more various and funny world.</Desc>
-  </Container>
+    <Container>
+      <Title>Sehyeon Park</Title>
+      <Desc>Make a more various and funny world.</Desc>
+    </Container>
+  </>
 );
 
 export default Intro;

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Section from "Components/Section";
+import RoutePointer from "Components/RoutePointer";
 import avatar from "Images/avatar.jpg";
 
 const Container = styled.div`
@@ -71,6 +72,7 @@ const ConsoleLog = styled.div`
 
 const Profile = () => (
   <>
+    <RoutePointer id="profile" />
     <Section title="Profile">
       <Container>
         <Grid>
