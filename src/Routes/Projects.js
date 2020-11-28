@@ -2,6 +2,10 @@ import Section from "Components/Section";
 import styled from "styled-components";
 import Project from "Components/Project.js";
 import RoutePointer from "Components/RoutePointer";
+import PortfolioImg from "Images/portfolio.png";
+import MetubeImg from "Images/metube.png";
+import BbangflixImg from "Images/bbangflix.png";
+import CTWImg from "Images/ctw.png";
 
 const Container = styled.div`
   width: 100%;
@@ -23,10 +27,10 @@ const Projects = () => (
     <Section title="Projects">
       <Container>
         <Grid>
-          <Project title="Portfolio" />
-          <Project title="MeTube" />
-          <Project title="BBangflix" />
-          <Project title="CTW" />
+          <Project title="Portfolio" img={PortfolioImg} />
+          <Project title="MeTube" img={MetubeImg} />
+          <Project title="BBangflix" img={BbangflixImg} />
+          <Project title="CTW" img={CTWImg} />
         </Grid>
       </Container>
     </Section>

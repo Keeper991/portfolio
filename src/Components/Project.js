@@ -1,5 +1,18 @@
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
+const Image = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  ${(props) =>
+    props.img
+      ? `background-image: url(${props.img}); background-size: cover;`
+      : `background-color: #bdc3c7`};
+  transition: all 0.3s linear;
+`;
 const Container = styled.div`
   width: 100%;
   height: 100%;
@@ -9,21 +22,14 @@ const Container = styled.div`
   z-index: 9;
   overflow: hidden;
   display: flex;
-  :hover .img {
-    transform: translate(4em, 4em);
+  cursor: pointer;
+  :hover ${Image} {
+    transform: scale(1.1, 1.1);
+    filter: blur(5px);
+    opacity: 0.6;
   }
-`;
-
-const Image = styled.div.attrs((props) => ({
-  className: "img",
-}))`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #f39c12;
-  transition: transform 0.3s ease-in-out;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Title = styled.span`
@@ -32,10 +38,14 @@ const Title = styled.span`
 `;
 
 const Project = ({ title, img }) => (
-  <Container img={img}>
+  <Container>
     <Title>{title}</Title>
-    <Image />
+    <Image img={img} />
   </Container>
 );
+
+Project.propTypes = {
+  img: PropTypes.string,
+};
 
 export default Project;
