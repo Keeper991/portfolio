@@ -1,4 +1,4 @@
-# Portfolio-React
+# Portfolio
 
 Portfolio Page made by React.js.
 
@@ -31,3 +31,8 @@ Portfolio Page made by React.js.
 ### Contact
 
 - [x] markup (fontawesome in react)
+
+### etc
+
+- [x] change favicon
+- [x] change site title
