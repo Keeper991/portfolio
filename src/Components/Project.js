@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import Modal, { activeModal } from "./Modal";
 
 const Image = styled.div`
   position: absolute;
@@ -13,13 +14,15 @@ const Image = styled.div`
       : `background-color: #bdc3c7`};
   transition: all 0.3s linear;
 `;
-const Container = styled.div`
+
+const Container = styled.div.attrs((props) => ({
+  id: props.id,
+}))`
   width: 100%;
   height: 100%;
   background-color: #2c3e50;
   color: white;
   position: relative;
-  z-index: 9;
   overflow: hidden;
   display: flex;
   cursor: pointer;
@@ -37,14 +40,19 @@ const Title = styled.span`
   font-size: 2rem;
 `;
 
-const Project = ({ title, img }) => (
-  <Container>
-    <Title>{title}</Title>
-    <Image img={img} />
-  </Container>
-);
+const Project = ({ id, title, img }) => {
+  return (
+    <Container id={id} onClick={activeModal(id)}>
+      <Title>{title}</Title>
+      <Image img={img} />
+      <Modal></Modal>
+    </Container>
+  );
+};
 
 Project.propTypes = {
+  id: PropTypes.string,
+  title: PropTypes.string,
   img: PropTypes.string,
 };
 

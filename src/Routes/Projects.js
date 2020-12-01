@@ -27,10 +27,10 @@ const Projects = () => (
     <Section title="Projects">
       <Container>
         <Grid>
-          <Project title="Portfolio" img={PortfolioImg} />
-          <Project title="MeTube" img={MetubeImg} />
-          <Project title="BBangflix" img={BbangflixImg} />
-          <Project title="CTW" img={CTWImg} />
+          <Project id="portfolio" title="Portfolio" img={PortfolioImg} />
+          <Project id="metube" title="MeTube" img={MetubeImg} />
+          <Project id="bbangflix" title="BBangflix" img={BbangflixImg} />
+          <Project id="ctw" title="CTW" img={CTWImg} />
         </Grid>
       </Container>
     </Section>
