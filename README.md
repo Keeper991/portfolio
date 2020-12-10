@@ -27,7 +27,9 @@ Portfolio Page made by React.js.
 - [x] markup (grid layout)
 - [x] hover animation
 - [x] project image
-- [ ] modal window
+- [x] modal window
+- [x] modal data
+- [ ] update modal data
 
 ### Contact
 
@@ -37,3 +39,4 @@ Portfolio Page made by React.js.
 
 - [x] change favicon
 - [x] change site title
+- [ ] mobile environment

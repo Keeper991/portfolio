@@ -21,7 +21,6 @@ const Container = styled.div.attrs((props) => ({
   width: 100%;
   height: 100%;
   background-color: #2c3e50;
-  color: white;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -36,16 +35,115 @@ const Container = styled.div.attrs((props) => ({
 `;
 
 const Title = styled.span`
+  color: white;
   padding: 0.5em;
   font-size: 2rem;
 `;
 
-const Project = ({ id, title, img }) => {
+const ModalHeader = styled.div`
+  border-bottom: 0.1em solid #34495e;
+  line-height: 1.5em;
+  padding-bottom: 0.2em;
+`;
+
+const ModalTitle = styled.div`
+  font-size: 2rem;
+  margin-bottom: 0.2em;
+`;
+
+const Block = styled.span`
+  background-color: #ecf0f1;
+  border: #bdc3c7 solid 1px;
+  border-radius: 5px;
+  color: #34495e;
+  padding: 0.2em;
+  font-size: 0.8rem;
+  margin-right: 0.2em;
+  a,
+  a:hover,
+  a:focus,
+  a:active {
+    text-decoration: none;
+    color: inherit;
+  }
+`;
+
+const ModalMain = styled.main`
+  padding: 1em 0;
+`;
+
+const ModalMainTitle = styled.div`
+  color: #34495e;
+  opacity: 0.5;
+  font-size: 1.5rem;
+  margin-bottom: 0.5em;
+  &:not(:first-child) {
+    margin-top: 1em;
+  }
+`;
+
+const ModalMainDesc = styled.div`
+  line-height: 1.5em;
+`;
+
+const StyleUl = styled.ul`
+  list-style-type: circle;
+  margin-left: 2em;
+`;
+
+const StyleLi = styled.li`
+  &:not(:last-child) {
+    margin-bottom: 0.2em;
+  }
+`;
+
+const Project = ({ id, title, img, modalContents }) => {
+  const {
+    name,
+    githubURL,
+    siteURL,
+    usedTech,
+    description,
+    purpose,
+    experience,
+  } = modalContents;
   return (
     <Container id={id} onClick={activeModal(id)}>
       <Title>{title}</Title>
       <Image img={img} />
-      <Modal></Modal>
+      <Modal>
+        <ModalHeader>
+          <ModalTitle>{name}</ModalTitle>
+          {siteURL ? <Block>{siteURL}</Block> : null}
+          {githubURL ? (
+            <Block>
+              <a href={githubURL} target="_blank" rel="noreferrer">
+                {githubURL}
+              </a>
+            </Block>
+          ) : null}
+        </ModalHeader>
+        <ModalMain>
+          <ModalMainTitle>Description</ModalMainTitle>
+          <ModalMainDesc>{description}</ModalMainDesc>
+          <ModalMainTitle>Used Skills</ModalMainTitle>
+          <ModalMainDesc>
+            {usedTech.map((oneTech) => (
+              <Block>{oneTech}</Block>
+            ))}
+          </ModalMainDesc>
+          <ModalMainTitle>Purpose</ModalMainTitle>
+          <ModalMainDesc>{purpose}</ModalMainDesc>
+          <ModalMainTitle>Experience</ModalMainTitle>
+          <ModalMainDesc>
+            <StyleUl>
+              {experience.map((exp) => (
+                <StyleLi>{exp}</StyleLi>
+              ))}
+            </StyleUl>
+          </ModalMainDesc>
+        </ModalMain>
+      </Modal>
     </Container>
   );
 };
@@ -54,6 +152,7 @@ Project.propTypes = {
   id: PropTypes.string,
   title: PropTypes.string,
   img: PropTypes.string,
+  modalContents: PropTypes.object,
 };
 
 export default Project;

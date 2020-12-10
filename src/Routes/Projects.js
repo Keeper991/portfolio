@@ -6,6 +6,7 @@ import PortfolioImg from "Images/portfolio.png";
 import MetubeImg from "Images/metube.png";
 import BbangflixImg from "Images/bbangflix.png";
 import CTWImg from "Images/ctw.png";
+import ProjectsData from "ProjectsData";
 
 const Container = styled.div`
   width: 100%;
@@ -21,20 +22,38 @@ const Grid = styled.div`
   grid-gap: 1em;
 `;
 
-const Projects = () => (
-  <>
-    <RoutePointer id="projects" />
-    <Section title="Projects">
-      <Container>
-        <Grid>
-          <Project id="portfolio" title="Portfolio" img={PortfolioImg} />
-          <Project id="metube" title="MeTube" img={MetubeImg} />
-          <Project id="bbangflix" title="BBangflix" img={BbangflixImg} />
-          <Project id="ctw" title="CTW" img={CTWImg} />
-        </Grid>
-      </Container>
-    </Section>
-  </>
-);
+const Projects = () => {
+  const { Portfolio, Metube, Bbangflix, CTW } = ProjectsData;
+  return (
+    <>
+      <RoutePointer id="projects" />
+      <Section title="Projects">
+        <Container>
+          <Grid>
+            <Project
+              id="portfolio"
+              title="Portfolio"
+              img={PortfolioImg}
+              modalContents={Portfolio}
+            />
+            <Project
+              id="metube"
+              title="MeTube"
+              img={MetubeImg}
+              modalContents={Metube}
+            />
+            <Project
+              id="bbangflix"
+              title="BBangflix"
+              img={BbangflixImg}
+              modalContents={Bbangflix}
+            />
+            <Project id="ctw" title="CTW" img={CTWImg} modalContents={CTW} />
+          </Grid>
+        </Container>
+      </Section>
+    </>
+  );
+};
 
 export default Projects;
