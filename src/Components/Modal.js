@@ -9,21 +9,25 @@ const Container = styled.div.attrs((props) => ({
   top: 0;
   left: 0;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
+  padding-top: 2em;
   background-color: rgba(44, 62, 80, 0.9);
   backdrop-filter: blur(5px);
-  overflow-y: scroll;
   z-index: 999;
   justify-content: center;
   align-items: center;
-  padding: 3em 10em;
   cursor: auto;
 `;
 
 const Content = styled.div`
   width: 100%;
+  max-width: 800px;
+  max-height: 100%;
+  overflow: scroll;
   background-color: #fefefe;
   padding: 2em;
+  margin: 3em auto;
+  border-radius: 1em;
 `;
 
 const Modal = ({ children }) => {

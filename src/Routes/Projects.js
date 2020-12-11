@@ -11,7 +11,7 @@ import ProjectsData from "ProjectsData";
 const Container = styled.div`
   width: 100%;
   max-width: 1000px;
-  padding: 0 5em;
+  padding: 0 0.5em;
 `;
 
 const Grid = styled.div`

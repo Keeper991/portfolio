@@ -21,6 +21,7 @@ const Container = styled.div`
     width: 100%;
     height: 100%;
     background-image: url(${bgImage});
+    background-position: center center;
     background-size: cover;
     opacity: 0.5;
     z-index: -1;

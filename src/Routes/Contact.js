@@ -17,14 +17,17 @@ const List = styled.ul``;
 const Item = styled.li`
   display: flex;
   align-items: center;
+  & > span {
+    margin-left: 0.5em;
+  }
 `;
 
 const IconWrapper = styled.div`
-  width: 3em;
-  padding: 1em;
+  font-size: 1.5em;
+  width: 1em;
+  padding: 1em 0;
   display: flex;
   justify-content: center;
-  font-size: 1.5em;
 `;
 
 const Contact = () => (
@@ -37,19 +40,19 @@ const Contact = () => (
             <IconWrapper>
               <FontAwesomeIcon icon={faMobileAlt} />
             </IconWrapper>
-            010 7479 2516
+            <span>010 7479 2516</span>
           </Item>
           <Item>
             <IconWrapper>
               <FontAwesomeIcon icon={faEnvelope} />
             </IconWrapper>
-            nesmile23@gmail.com
+            <span>nesmile23@gmail.com</span>
           </Item>
           <Item>
             <IconWrapper>
               <FontAwesomeIcon icon={faGithub} />
             </IconWrapper>
-            Keeper991
+            <span>Keeper991</span>
           </Item>
         </List>
       </Container>

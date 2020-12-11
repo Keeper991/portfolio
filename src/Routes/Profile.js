@@ -41,7 +41,7 @@ const Inform = styled.pre`
   font-family: monospace;
   font-weight: 600;
   line-height: 2em;
-  padding: 2em;
+  padding: 1.5em;
   :last-child {
     grid-column: 1 / -1;
   }
@@ -92,19 +92,19 @@ const Profile = () => (
             </ConsoleLog>
             <Curly>{`{`}</Curly>
             <br />
-            <Key>{`   name:`}</Key> "박세현",
+            <Key>{`  name:`}</Key> "박세현",
             <br />
-            <Key>{`   birth:`}</Key> "1991-11-23",
+            <Key>{`  birth:`}</Key> "1991-11-23",
             <br />
-            <Key>{`   skills:`}</Key> <Squre>[</Squre>
+            <Key>{`  skills:`}</Key> <Squre>[</Squre>
             {`
-        "HTML", "CSS",
-        "JavaScript", "React",
-        "MySQL", "MongoDB", ...`}
+    "HTML", "CSS",
+    "JavaScript", "React",
+    "MySQL", "MongoDB", ...`}
             <br />
-            <Squre>{`   ]`}</Squre>
+            <Squre>{`  ]`}</Squre>
             <br />
-            <Key>{`   company:`}</Key> "Fill this area...",
+            <Key>{`  company:`}</Key> "Fill this area",
             <br />
             <Curly>{`}`}</Curly>
           </Inform>

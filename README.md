@@ -40,4 +40,4 @@ Portfolio Page made by React.js.
 
 - [x] change favicon
 - [x] change site title
-- [ ] mobile environment
+- [x] mobile environment

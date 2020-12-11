@@ -48,17 +48,19 @@ const ModalHeader = styled.div`
 
 const ModalTitle = styled.div`
   font-size: 2rem;
-  margin-bottom: 0.2em;
+  margin-bottom: 0.5em;
 `;
 
-const Block = styled.span`
+const Block = styled.div`
+  display: inline-block;
   background-color: #ecf0f1;
   border: #bdc3c7 solid 1px;
   border-radius: 5px;
   color: #34495e;
-  padding: 0.2em;
+  padding: 0 0.5em;
   font-size: 0.8rem;
   margin-right: 0.2em;
+  line-height: 1rem;
   a,
   a:hover,
   a:focus,
@@ -88,7 +90,7 @@ const ModalMainDesc = styled.div`
 
 const StyleUl = styled.ul`
   list-style-type: circle;
-  margin-left: 2em;
+  margin-left: 1.5em;
 `;
 
 const StyleLi = styled.li`
