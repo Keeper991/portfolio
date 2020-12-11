@@ -24,22 +24,22 @@ const Symbol = styled.div`
   border-radius: 50%;
   width: 3em;
   height: 3em;
-  margin-right: 2em;
   cursor: pointer;
 `;
 
 const List = styled.ul`
-  width: 100%;
   display: flex;
+  margin-left: 2em;
+  font-size: 1.2em;
+  font-weight: 600;
+  text-shadow: 1px 1px 1px #ffffff, 0px 0px 8px #ffffff;
 `;
 
 const Item = styled.li`
-  font-size: 1.2em;
   :not(:last-child) {
     margin-right: 1em;
   }
   padding: 1.5em 0.5em;
-  text-shadow: 0.1em 0.1em 0.2em #ffffff;
   cursor: pointer;
 `;
 

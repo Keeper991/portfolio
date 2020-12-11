@@ -10,6 +10,7 @@ Portfolio Page made by React.js.
 - [x] background color & blur (scroll responsive)
 - [x] symbol
 - [x] page scrolling event
+- [x] well-visible menu design
 - [ ] hash routing
 
 ### Intro
