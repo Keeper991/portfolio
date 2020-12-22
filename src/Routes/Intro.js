@@ -1,8 +1,7 @@
 import styled from "styled-components";
-import RoutePointer from "Components/RoutePointer";
 import bgImage from "Images/bg_intro.jpg";
 
-const Container = styled.div`
+const Container = styled.div.attrs((props) => ({ id: props.id }))`
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -40,8 +39,7 @@ const Desc = styled.p`
 
 const Intro = () => (
   <>
-    <RoutePointer id="#" />
-    <Container>
+    <Container id="#">
       <Title>Sehyeon Park</Title>
       <Desc>Make a more various and funny world.</Desc>
     </Container>

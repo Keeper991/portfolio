@@ -1,7 +1,9 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
 
-const Container = styled.div`
+const Container = styled.div.attrs((props) => ({
+  id: props.id,
+}))`
   width: 100%;
   background: ${(prop) => (prop.bg ? prop.bg : "inherit")};
   display: flex;
@@ -25,14 +27,15 @@ const Desc = styled.div`
   align-items: center;
 `;
 
-const Section = ({ bg, title, children }) => (
-  <Container bg={bg}>
+const Section = ({ id, bg, title, children }) => (
+  <Container id={id} bg={bg}>
     <Title>{title}</Title>
     <Desc>{children}</Desc>
   </Container>
 );
 
 Section.propTypes = {
+  id: PropTypes.string,
   bg: PropTypes.string,
   title: PropTypes.string,
   children: PropTypes.oneOfType([

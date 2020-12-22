@@ -3,6 +3,7 @@ import styled from "styled-components";
 import symbol from "Images/symbol.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { HashLink } from "react-router-hash-link";
 
 const Container = styled.div`
   width: 100vw;
@@ -19,23 +20,13 @@ const Container = styled.div`
   transition: backdrop-filter 0.5s ease, background-color 0.5s ease;
 `;
 
-const Symbol = styled.div`
-  background-image: url(${symbol});
-  background-size: cover;
-  background-position: center center;
-  border-radius: 50%;
-  width: 3em;
-  height: 3em;
-  margin: 0.5em 0;
-  cursor: pointer;
-`;
-
 const MenuList = styled.ul`
   @media (max-width: 500px) {
     display: none;
   }
+  margin-left: 1em;
   display: flex;
-  margin-left: 2em;
+  align-items: center;
   font-size: 1.2em;
   font-weight: 600;
   text-shadow: 1px 1px 1px #ffffff, 0px 0px 8px #ffffff;
@@ -45,10 +36,37 @@ const MenuItem = styled.li`
   :not(:last-child) {
     margin-right: 1em;
   }
-  padding: 1.5em 0.5em;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
 `;
 
+const Symbol = styled.div`
+  background-image: url(${symbol});
+  background-size: cover;
+  background-position: center center;
+  border-radius: 50%;
+  width: 3em;
+  height: 3em;
+`;
+
+const MenuLink = styled(HashLink)`
+  text-decoration: none;
+  &:visited {
+    color: inherit;
+  }
+  padding: 1.5em 0.5em;
+  @media (max-width: 500px) {
+    padding: 0;
+  }
+`;
+
+const SymbolLink = styled(HashLink)`
+  text-decoration: none;
+  border-radius: 50%;
+  margin: 0.5em;
+`;
+
+// mobile environment menu
 const Burger = styled.div`
   @media (max-width: 500px) {
     display: flex;
@@ -102,15 +120,6 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Header click event
-  const scrollTo = (sectionName) => {
-    if (typeof sectionName !== "string") return;
-    return () => {
-      const section = document.getElementById(sectionName);
-      section.scrollIntoView({ behavior: "smooth" });
-    };
-  };
-
   // balloon menu state
   const [isBalloonOn, setBalloonOn] = useState(false);
 
@@ -120,20 +129,46 @@ const Header = () => {
 
   return (
     <Container isScroll={isScroll}>
-      <Symbol onClick={scrollTo("#")} />
+      <SymbolLink smooth to="#">
+        <Symbol />
+      </SymbolLink>
       <MenuList>
-        <MenuItem onClick={scrollTo("profile")}>PROFILE</MenuItem>
-        <MenuItem onClick={scrollTo("projects")}>PROJECTS</MenuItem>
-        <MenuItem onClick={scrollTo("contact")}>CONTACT</MenuItem>
+        <MenuItem>
+          <MenuLink smooth to="/#profile">
+            PROFILE
+          </MenuLink>
+        </MenuItem>
+        <MenuItem>
+          <MenuLink smooth to="/#projects">
+            PROJECTS
+          </MenuLink>
+        </MenuItem>
+        <MenuItem>
+          <MenuLink smooth to="/#contact">
+            CONTACT
+          </MenuLink>
+        </MenuItem>
       </MenuList>
       <Burger>
         <BurgerBtn isScroll={isScroll} onClick={balloonToggle}>
           <FontAwesomeIcon icon={faBars} />
         </BurgerBtn>
         <BalloonList isScroll={isScroll} isBalloonOn={isBalloonOn}>
-          <BalloonItem onClick={scrollTo("profile")}>Profile</BalloonItem>
-          <BalloonItem onClick={scrollTo("projects")}>Projects</BalloonItem>
-          <BalloonItem onClick={scrollTo("contact")}>Contact</BalloonItem>
+          <BalloonItem>
+            <MenuLink smooth to="/#profile">
+              Profile
+            </MenuLink>
+          </BalloonItem>
+          <BalloonItem>
+            <MenuLink smooth to="/#projects">
+              Projects
+            </MenuLink>
+          </BalloonItem>
+          <BalloonItem>
+            <MenuLink smooth to="/#contact">
+              Contact
+            </MenuLink>
+          </BalloonItem>
         </BalloonList>
       </Burger>
     </Container>

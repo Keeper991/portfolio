@@ -1,7 +1,6 @@
 import Section from "Components/Section";
 import styled from "styled-components";
 import Project from "Components/Project.js";
-import RoutePointer from "Components/RoutePointer";
 import PortfolioImg from "Images/portfolio.png";
 import MetubeImg from "Images/metube.png";
 import BbangflixImg from "Images/bbangflix.png";
@@ -26,8 +25,7 @@ const Projects = () => {
   const { Portfolio, Metube, Bbangflix, CTW } = ProjectsData;
   return (
     <>
-      <RoutePointer id="projects" />
-      <Section title="Projects">
+      <Section title="Projects" id="projects">
         <Container>
           <Grid>
             <Project

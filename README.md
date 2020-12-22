@@ -11,7 +11,7 @@ Portfolio Page made by React.js.
 - [x] symbol
 - [x] page scrolling event
 - [x] well-visible menu design
-- [ ] hash routing
+- [x] hash routing
 
 ### Intro
 

@@ -6,6 +6,8 @@ import Profile from "Routes/Profile";
 import Projects from "Routes/Projects";
 import styled from "styled-components";
 
+import { BrowserRouter as Router } from "react-router-dom";
+
 const StyleDiv = styled.div.attrs({ classname: "App" })`
   display: flex;
   flex-direction: column;
@@ -16,7 +18,9 @@ function App() {
   return (
     <StyleDiv>
       <GlobalStyle />
-      <Header />
+      <Router>
+        <Header />
+      </Router>
       <Intro />
       <Profile />
       <Projects />
