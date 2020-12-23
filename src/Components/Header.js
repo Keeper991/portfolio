@@ -51,6 +51,7 @@ const Symbol = styled.div`
 
 const MenuLink = styled(HashLink)`
   text-decoration: none;
+  color: inherit;
   &:visited {
     color: inherit;
   }
