@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import bgImage from "Images/bg_intro.jpg";
+import { COLORS } from "Components/Consts";
 
 const Container = styled.div.attrs((props) => ({ id: props.id }))`
   width: 100vw;
@@ -7,11 +8,10 @@ const Container = styled.div.attrs((props) => ({ id: props.id }))`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: #95a5a6;
-  color: white;
-  padding: 0 5em;
-  position: relative;
-  z-index: 1;
+  padding-left: 10%;
+  color: ${COLORS.white};
+  background-color: ${COLORS.black};
+  z-index: -1;
   ::before {
     position: absolute;
     content: "";
@@ -22,28 +22,38 @@ const Container = styled.div.attrs((props) => ({ id: props.id }))`
     background-image: url(${bgImage});
     background-position: center center;
     background-size: cover;
-    opacity: 0.5;
-    z-index: -1;
+    background-attachment: fixed;
+    opacity: 0.2;
+    z-index: -2;
   }
 `;
 
 const Title = styled.div`
-  font-size: 3rem;
-  text-shadow: 0.1em 0.1em 0.2em #2c3e50;
+  font-family: "Anton", sans-serif;
+  text-transform: uppercase;
+  font-size: 6rem;
+  ::first-letter {
+    color: ${COLORS.accent};
+  }
 `;
 
 const Desc = styled.p`
+  font-weight: 200;
+  font-size: 1.5rem;
   margin-top: 1em;
-  text-shadow: 0.1em 0.1em 0.2em #2c3e50;
 `;
 
 const Intro = () => (
-  <>
-    <Container id="#">
-      <Title>Sehyeon Park</Title>
-      <Desc>Make a more various and funny world.</Desc>
-    </Container>
-  </>
+  <Container id="#">
+    <Title>
+      Se
+      <br />
+      hyeon
+      <br />
+      Park
+    </Title>
+    <Desc>Front-end Developer</Desc>
+  </Container>
 );
 
 export default Intro;
