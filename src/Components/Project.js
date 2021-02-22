@@ -130,8 +130,8 @@ const Project = ({ id, title, img, modalContents }) => {
           <ModalMainDesc>{description}</ModalMainDesc>
           <ModalMainTitle>Used Skills</ModalMainTitle>
           <ModalMainDesc>
-            {usedTech.map((oneTech) => (
-              <Block>{oneTech}</Block>
+            {usedTech.map((tech) => (
+              <Block key={tech}>{tech}</Block>
             ))}
           </ModalMainDesc>
           <ModalMainTitle>Purpose</ModalMainTitle>
@@ -139,8 +139,8 @@ const Project = ({ id, title, img, modalContents }) => {
           <ModalMainTitle>Experience</ModalMainTitle>
           <ModalMainDesc>
             <StyleUl>
-              {experience.map((exp) => (
-                <StyleLi>{exp}</StyleLi>
+              {experience.map((exp, i) => (
+                <StyleLi key={i}>{exp}</StyleLi>
               ))}
             </StyleUl>
           </ModalMainDesc>
