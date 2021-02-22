@@ -1,10 +1,10 @@
 import Section from "Components/Section";
 import styled from "styled-components";
 import Project from "Components/Project.js";
-import PortfolioImg from "Images/portfolio.png";
-import MetubeImg from "Images/metube.png";
-import BbangflixImg from "Images/bbangflix.png";
-import CTWImg from "Images/ctw.png";
+import PortfolioImg from "Images/portfolio.jpg";
+import MetubeImg from "Images/metube.jpg";
+import BbangflixImg from "Images/bbangflix.jpg";
+import CTWImg from "Images/ctw.jpg";
 import ProjectsData from "ProjectsData";
 
 const Container = styled.div`
