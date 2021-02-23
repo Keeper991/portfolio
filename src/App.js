@@ -8,7 +8,7 @@ import styled from "styled-components";
 
 import { BrowserRouter as Router } from "react-router-dom";
 
-const StyleDiv = styled.div.attrs({ classname: "App" })`
+const StyleDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;

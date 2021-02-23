@@ -4,8 +4,11 @@ import symbol from "Images/symbol.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { HashLink } from "react-router-hash-link";
+import { COLORS } from "Components/Consts";
 
 const Container = styled.div`
+  font-family: "Oswald", sans-serif;
+  font-weight: 400;
   width: 100vw;
   position: fixed;
   display: flex;
@@ -14,10 +17,10 @@ const Container = styled.div`
   z-index: 10;
   ${(props) => {
     return props.isScroll
-      ? `backdrop-filter: blur(10px); background-color: rgba(236, 240, 241, 0.5);`
+      ? `backdrop-filter: blur(10px); background-color: ${COLORS.blackTP};`
       : null;
   }};
-  transition: backdrop-filter 0.5s ease, background-color 0.5s ease;
+  transition: backdrop-filter 0.2s;
 `;
 
 const MenuList = styled.ul`
@@ -28,8 +31,7 @@ const MenuList = styled.ul`
   display: flex;
   align-items: center;
   font-size: 1.2em;
-  font-weight: 600;
-  text-shadow: 1px 1px 1px #ffffff, 0px 0px 8px #ffffff;
+  color: ${COLORS.white};
 `;
 
 const MenuItem = styled.li`
@@ -114,9 +116,9 @@ const BalloonItem = styled.li`
 const Header = () => {
   // Header background style
   const [isScroll, setIsScroll] = useState(false);
-  const handleScroll = () =>
-    window.scrollY > 100 ? setIsScroll(true) : setIsScroll(false);
   useEffect(() => {
+    const handleScroll = () =>
+      window.scrollY > 100 ? setIsScroll(true) : setIsScroll(false);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
